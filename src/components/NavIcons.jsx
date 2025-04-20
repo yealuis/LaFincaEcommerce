@@ -1,0 +1,40 @@
+"use client"
+import { useState } from "react"
+import { useRouter } from "next/navigation"
+import Link from "next/link"
+import styles from "./navbar.module.css"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faUser, faBell, faCartShopping } from "@fortawesome/free-solid-svg-icons"
+
+const NavIcons = () => {
+  const [isProfileOpen, setIsProfileOpen] = useState(false)
+  const [isCartOpen, setIsCartOpen] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
+
+  const router = useRouter()
+  const isLoggedIn = false
+
+  const handleProfile = () => {
+    {//if (!isLoggedIn) {
+      //router.push("/login")
+    }//}
+      setIsProfileOpen((prev) => !prev)
+  }
+
+  return (
+    <div className={styles.navIcons}>
+      <FontAwesomeIcon icon={faUser} size="2x" onClick={handleProfile} />
+      {isProfileOpen && (
+        <div className={styles.profileBar}>
+          <Link href="/profile">Profile</Link>
+          <div className="mt-2 cursor-pointer" >Logout</div>
+        </div>
+      )}
+      <FontAwesomeIcon icon={faBell} size="2x" />
+      <FontAwesomeIcon icon={faCartShopping} size="2x" onClick={() => setIsCartOpen((prev) => !prev)} />
+      {/*isCartOpen && <CartModal />*/}
+    </div>
+  )
+}
+
+export default NavIcons
