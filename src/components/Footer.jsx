@@ -59,12 +59,12 @@ const Footer = () => {
           </div>
         </div>
         {/*Derecha*/}
-        <div className={`${styles.sides} ${styles.rightSide}`}>
+        <div className={styles.sides}>
           <h1 className={styles.h1}>SUSCRIBETE</h1>
           <p>¡Se el primero en recibir información sobre nuestras ultimas ofertas, promociones y mucho más!</p>
           <div className={styles.subscribeDiv}>
-            <input type="text" placeholder="Email" />
-            <button>UNETE</button>
+            <input type="text" placeholder="Email" className={styles.input} />
+            <button className={styles.button}>UNETE</button>
           </div>
           <span className={styles.span}>Formas de pago</span>
           <div className={styles.paymentsIcons}>

@@ -60,13 +60,6 @@
   font-weight: 500;
 }
 
-.rightSide {
-
-  div {
-    display: flex;
-  }
-}
-
 .center {
   width: 1/2;
   display: none;
@@ -93,11 +86,11 @@
 .subscribeDiv {
   display: flex;
 
-  input {
+  .input {
     padding: 1rem;
     width: 75%;
   }
-  button {
+  .button {
     width: 25%;
     color: #ffffff;
     background-color: red;
