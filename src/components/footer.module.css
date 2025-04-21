@@ -1,0 +1,147 @@
+.footer {
+  padding: 6rem 1rem;
+  background-color: azure;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  margin-top: 6rem;
+
+
+  @media (min-width: 768px) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  @media (min-width: 1024px) {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+  @media (min-width: 1280px) {
+    padding-left: 8rem;
+    padding-right: 8rem;
+  }
+  @media (min-width: 1536px) {
+    padding-left: 16rem;
+    padding-right: 16rem;
+  }
+}
+
+.top {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 6rem;
+
+  @media (min-width: 768px) { 
+    flex-direction: row; 
+ }
+}
+
+.sides {
+  width: 1/4;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+
+  @media (min-width: 768px) { 
+    width: 50%; 
+  }
+  @media (min-width: 1024px) { 
+    width: 25%; 
+  }
+
+  span {
+    font-weight: 600;
+  }
+}
+
+.h1 {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 500;
+}
+
+.rightSide {
+
+  div {
+    display: flex;
+  }
+}
+
+.center {
+  width: 1/2;
+  display: none;
+  justify-content: space-between; 
+  width: 50%;
+
+  @media (min-width: 1024px) { 
+    display: flex; 
+  }
+}
+
+.centerColumns {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.centerInfo {
+  display: flex; 
+  flex-direction: column; 
+  gap: 1.5rem;
+}
+
+.subscribeDiv {
+  display: flex;
+
+  input {
+    padding: 1rem;
+    width: 75%;
+  }
+  button {
+    width: 25%;
+    color: #ffffff;
+    background-color: red;
+  }
+}
+
+.socialIcons {
+   display: flex;
+   gap: 2rem;
+}
+
+.paymentsIcons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bottom {
+  display: flex; 
+  margin-top: 4rem; 
+  flex-direction: column; 
+  gap: 2rem; 
+  justify-content: space-between; 
+  align-items: center; 
+
+  @media (min-width: 768px) { 
+    flex-direction: row; 
+  }
+}
+
+.bottomDiv {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  @media (min-width: 768px) { 
+    flex-direction: row; 
+  }
+
+  .span1 {
+    margin-right: 1rem;
+    color: #6B7280;
+  }
+
+  .span2 {
+    font-weight: 500;
+  }
+}
