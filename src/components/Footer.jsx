@@ -15,8 +15,8 @@ const Footer = () => {
             <Image src="/lafincaLogoH.webp" alt="La Finca" width={110} height={50} />
           </Link>
           <p>El Vigia estado Merida</p>
-          <span className={styles}>lafinca.prodserv@gmail.com</span>
-          <span className={styles}>0414-6682610</span>
+          <span className={styles.span}>lafinca.prodserv@gmail.com</span>
+          <span className={styles.span}>0414-6682610</span>
           <div className={styles.socialIcons}>
             <FontAwesomeIcon icon={faFacebook} size="1x"/>
             <FontAwesomeIcon icon={faInstagram} size="1x"/>
@@ -66,7 +66,7 @@ const Footer = () => {
             <input type="text" placeholder="Email" />
             <button>UNETE</button>
           </div>
-          <span>Formas de pago</span>
+          <span className={styles.span}>Formas de pago</span>
           <div className={styles.paymentsIcons}>
             <FontAwesomeIcon icon={faCcDiscover} size="1x"/>
             <FontAwesomeIcon icon={faPaypal} size="1x"/>

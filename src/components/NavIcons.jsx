@@ -27,7 +27,7 @@ const NavIcons = () => {
       {isProfileOpen && (
         <div className={styles.profileBar}>
           <Link href="/profile">Profile</Link>
-          <div className="mt-2 cursor-pointer" >Logout</div>
+          <div className={styles.div} >Logout</div>
         </div>
       )}
       <FontAwesomeIcon icon={faBell} size="2x" />
