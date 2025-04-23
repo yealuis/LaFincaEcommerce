@@ -5,6 +5,7 @@ import Link from "next/link"
 import styles from "./navbar.module.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faUser, faBell, faCartShopping } from "@fortawesome/free-solid-svg-icons"
+import CartModal from "./CartModal"
 
 const NavIcons = () => {
   const [isProfileOpen, setIsProfileOpen] = useState(false)
@@ -23,16 +24,22 @@ const NavIcons = () => {
 
   return (
     <div className={styles.navIcons}>
-      <FontAwesomeIcon icon={faUser} size="2x" onClick={handleProfile} />
+      <FontAwesomeIcon icon={faUser} size="2x" className={styles.awesomeIcons} onClick={handleProfile} />
       {isProfileOpen && (
         <div className={styles.profileBar}>
-          <Link href="/profile">Profile</Link>
-          <div className={styles.div} >Logout</div>
+          <Link href="/profile">Perfil</Link>
+          <div className={styles.div} >Cerrar Sesión</div>
         </div>
       )}
-      <FontAwesomeIcon icon={faBell} size="2x" />
-      <FontAwesomeIcon icon={faCartShopping} size="2x" onClick={() => setIsCartOpen((prev) => !prev)} />
-      {/*isCartOpen && <CartModal />*/}
+      <FontAwesomeIcon icon={faBell} size="2x" className={styles.awesomeIcons} />
+      <div className={styles.cartContainer}>
+        <FontAwesomeIcon icon={faCartShopping} size="2x" className={styles.awesomeIcons} onClick={() => setIsCartOpen((prev) => !prev)} />
+        <div className={styles.cartCounter}>
+          2
+          {/*counter*/}
+        </div>
+      </div>
+      {isCartOpen && <CartModal />}
     </div>
   )
 }

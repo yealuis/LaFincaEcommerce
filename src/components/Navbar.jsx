@@ -23,11 +23,11 @@ const Navbar = () => {
               <Image src="/lafincaLogo.webp" alt="La Finca" width={25} height={50} />
             </Link>
             <div className={styles.navMenu}>
-              <Link href="/">Homepage</Link>
-              <Link href="/">Shop</Link>
-              <Link href="/">Deals</Link>
-              <Link href="/">About</Link>
-              <Link href="/">Contact</Link>
+              <Link href="/">Inicio</Link>
+              <Link href="/">Productos</Link>
+              <Link href="/">Ofertas</Link>
+              <Link href="/">Sobre Nosotros</Link>
+              <Link href="/">Contacto</Link>
             </div>
           </div>
         {/*Derecha*/}
