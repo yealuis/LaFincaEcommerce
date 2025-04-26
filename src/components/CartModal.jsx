@@ -21,7 +21,7 @@ const CartModal = () => {
                 <div className={styles.productTop}>
                   {/* Titulo */}
                   <div className={styles.productTitle}>
-                    <h3 className={styles.h3}>Nombre del Producto</h3>
+                    <h3 className={styles.h3}>Isopan</h3>
                     <div className={styles.productPrice}>40 $</div>
                   </div>
                   {/*descripcion */}

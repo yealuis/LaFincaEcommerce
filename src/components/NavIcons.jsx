@@ -24,16 +24,16 @@ const NavIcons = () => {
 
   return (
     <div className={styles.navIcons}>
-      <FontAwesomeIcon icon={faUser} size="2x" className={styles.awesomeIcons} onClick={handleProfile} />
+      <FontAwesomeIcon icon={faUser} className={styles.awesomeIcons} onClick={handleProfile} />
       {isProfileOpen && (
         <div className={styles.profileBar}>
           <Link href="/profile">Perfil</Link>
           <div className={styles.div} >Cerrar Sesión</div>
         </div>
       )}
-      <FontAwesomeIcon icon={faBell} size="2x" className={styles.awesomeIcons} />
+      <FontAwesomeIcon icon={faBell} className={styles.awesomeIcons} />
       <div className={styles.cartContainer}>
-        <FontAwesomeIcon icon={faCartShopping} size="2x" className={styles.awesomeIcons} onClick={() => setIsCartOpen((prev) => !prev)} />
+        <FontAwesomeIcon icon={faCartShopping} className={styles.awesomeIcons} onClick={() => setIsCartOpen((prev) => !prev)} />
         <div className={styles.cartCounter}>
           2
           {/*counter*/}

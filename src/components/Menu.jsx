@@ -10,16 +10,16 @@ const Menu = () => {
   
   return (
     <div className="">
-      <FontAwesomeIcon icon={faBars} size='2x' className={styles.menuIcon} onClick={() => setOpen((prev) => !prev)} />
+      <FontAwesomeIcon icon={faBars} className={styles.menuIcon} onClick={() => setOpen((prev) => !prev)} />
       {open && (
         <div className={styles.menuBar}>
-          <Link href="/">Homepage</Link>
-          <Link href="/">Shop</Link>
-          <Link href="/">Deals</Link>
-          <Link href="/">About</Link>
-          <Link href="/">Contact</Link>
-          <Link href="/">Logout</Link>
-          <Link href="/">Cart</Link>
+          <Link href="/">Inicio</Link>
+          <Link href="/">Productos</Link>
+          <Link href="/">Ofertas</Link>
+          <Link href="/">Sobre Nosotros</Link>
+          <Link href="/">Contacto</Link>
+          <Link href="/">Cerrar Sesion</Link>
+          <Link href="/">Carrito</Link>
         </div>
       )}
     </div>

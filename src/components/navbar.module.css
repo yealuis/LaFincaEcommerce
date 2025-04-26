@@ -3,7 +3,7 @@
   padding-left: 1rem;
   padding-right: 1rem;
   position: relative;
-  background-color: rgb(55, 211, 55);
+  background-color: rgb(49, 180, 49);
 
   @media (min-width: 768px) {
     padding-left: 2rem;
@@ -66,6 +66,7 @@
 .navMenu {
   display: none; 
   gap: 1rem;
+  color: white;
 
   @media (min-width: 1280px) { 
     display: flex; 
@@ -109,12 +110,14 @@
 }
 
 .searchIcon {
-  color: #000000;
+  color: rgb(49, 180, 49);
   background: #F3F4F6;
 }
 
 .awesomeIcons {
   cursor: pointer;
+  color: white;
+  font-size: 27px;
 }
 
 .navIcons {

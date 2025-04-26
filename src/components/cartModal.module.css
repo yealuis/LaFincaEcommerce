@@ -4,7 +4,7 @@
   padding: 1rem;
   border-radius: 0.375rem;
   box-shadow: 0 3px 10 rgba(0, 0, 0, 0.2);
-  background-color: #ffffff;
+  background-color: rgba(231, 247, 231, 0.979);
   top: 3rem;
   right: 0;
   display: flex;
@@ -32,6 +32,8 @@
 .carImages {
   object-fit: cover;
   border-radius: 0.375rem;
+  border: 1px solid #ddd;
+  background-color: #fff;
 }
 
 .productDetails {
@@ -54,14 +56,12 @@
 
 .productPrice {
   padding: 0.25rem;
-  border-radius: 0.125rem;
-  background-color: #F9FAFB;
 }
 
 .productDescription {
   font-size: 0.75rem;
   line-height: 1rem;
-  color: #6B7280;
+  color: #4e5158;
 }
 
 .productBottom {
@@ -72,7 +72,7 @@
 }
 
 .productSpanQuantity {
-  color: #6B7280;
+  color: #4e5158;
 }
 
 .productSpanRemove {
@@ -92,7 +92,7 @@
   margin-bottom: 1rem;
   font-size: 0.875rem;
   line-height: 1.25rem;
-  color: #6B7280;
+  color: #4e5158;
 }
 
 .buttonContainer {
@@ -112,11 +112,13 @@
 }
 
 .viewButton {
-  box-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color); 
-  --ring-color: #D1D5DB;
+  box-shadow: inset 0 0 0 2px #D1D5DB;
+  border: 2px solid black;
 }
 
 .payButton {
-  color: #ffffff;
-  background-color: #000000;
+  color: black;
+  background-color: rgb(49, 180, 49);
+  box-shadow: inset 0 0 0 2px rgb(43, 158, 43);
+  border: 2px solid black;
 }
