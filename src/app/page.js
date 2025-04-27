@@ -9,7 +9,7 @@ export default function Home() {
       <Slider/>
       <main className={styles.main}>
         <div className={styles.productList}>
-          <h1 className={styles.productH1}>Productos</h1>
+          <h1 className={styles.productH1}>Productos Destacados</h1>
           <ProductList/>
         </div>
       </main>
