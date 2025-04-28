@@ -11,7 +11,7 @@ const Navbar = () => {
       {/*Pantallas Pequeñas*/}
       <div className={styles.navMobile}>
         <Link href="/">
-          <Image src="/lafincaLogoH.webp" alt="La Finca" width={100} height={50} />
+          <Image src="/lafincaLogoHB.webp" alt="La Finca" width={100} height={50} />
         </Link>
         <Menu />
       </div>
@@ -20,11 +20,11 @@ const Navbar = () => {
         {/*Izquierda*/}
           <div className={styles.navLeft}>
             <Link href="/" className={styles}>
-              <Image src="/lafincaLogo.webp" alt="La Finca" width={25} height={50} />
+              <Image src="/lafincaLogoBlanco.webp" alt="La Finca" width={25} height={50} />
             </Link>
             <div className={styles.navMenu}>
               <Link href="/">Inicio</Link>
-              <Link href="/">Productos</Link>
+              <Link href="/productos">Productos</Link>
               <Link href="/">Ofertas</Link>
               <Link href="/">Sobre Nosotros</Link>
               <Link href="/">Contacto</Link>

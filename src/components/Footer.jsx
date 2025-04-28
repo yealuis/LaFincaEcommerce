@@ -30,31 +30,31 @@ const Footer = () => {
         <div className={styles.centerColumns}>
             <h1 className={styles.h1}>COMPAÑIA</h1>
             <div className={styles.centerInfo}>
-              <Link href="">Sobre Nosotros</Link>
-              <Link href="">Aliados Comerciales</Link>
-              <Link href="">Vendedores</Link>
-              <Link href="">Blog</Link>
-              <Link href="">Contactanos</Link>
+              <Link href="/">Sobre Nosotros</Link>
+              <Link href="/">Aliados Comerciales</Link>
+              <Link href="/">Vendedores</Link>
+              <Link href="/">Blog</Link>
+              <Link href="/">Contactanos</Link>
             </div>
           </div>
           <div className={styles.centerColumns}>
             <h1 className={styles.h1}>TIENDA</h1>
             <div className={styles.centerInfo}>
-              <Link href="">Nuevos Productos</Link>
-              <Link href="">Mascotas</Link>
-              <Link href="">Granja</Link>
-              <Link href="">Agricola</Link>
-              <Link href="">Todos los Productos</Link>
+              <Link href="/productos">Nuevos Productos</Link>
+              <Link href="/productos">Mascotas</Link>
+              <Link href="/productos">Granja</Link>
+              <Link href="/productos">Agricola</Link>
+              <Link href="/productos">Todos los Productos</Link>
             </div>
           </div>
           <div className={styles.centerColumns}>
             <h1 className={styles.h1}>AYUDA</h1>
             <div className={styles.centerInfo}>
-              <Link href="">Servicio al Cliente</Link>
-              <Link href="">Mi Cuenta</Link>
-              <Link href="">Encuentra en Nuestra Tienda</Link>
-              <Link href="">Privacidad</Link>
-              <Link href="">Tarjetas de Regalo</Link>
+              <Link href="/">Servicio al Cliente</Link>
+              <Link href="/">Mi Cuenta</Link>
+              <Link href="/">Encuentra en Nuestra Tienda</Link>
+              <Link href="/">Privacidad</Link>
+              <Link href="/">Tarjetas de Regalo</Link>
             </div>
           </div>
         </div>
