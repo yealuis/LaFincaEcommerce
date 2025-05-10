@@ -14,7 +14,7 @@ const Menu = () => {
       {open && (
         <div className={styles.menuBar}>
           <Link href="/">Inicio</Link>
-          <Link href="/">Productos</Link>
+          <Link href="/productos">Productos</Link>
           <Link href="/">Ofertas</Link>
           <Link href="/">Sobre Nosotros</Link>
           <Link href="/">Contacto</Link>

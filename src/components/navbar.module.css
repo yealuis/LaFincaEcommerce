@@ -3,7 +3,7 @@
   padding-left: 1rem;
   padding-right: 1rem;
   position: relative;
-  background-color: rgb(49, 180, 49);
+  background-color: var(--lafincaGreen);
 
   @media (min-width: 768px) {
     padding-left: 2rem;
@@ -110,7 +110,7 @@
 }
 
 .searchIcon {
-  color: rgb(49, 180, 49);
+  color: var(--lafincaGreen);
   background: #F3F4F6;
 }
 

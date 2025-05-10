@@ -1,6 +1,6 @@
 .footer {
   padding: 6rem 1rem;
-  background-color: rgba(231, 247, 231, 0.98);
+  background-color: var(--lafincaLightGreen);
   font-size: 0.875rem;
   line-height: 1.25rem;
   margin-top: 6rem;
@@ -131,7 +131,7 @@
 
   .span1 {
     margin-right: 1rem;
-    color: #6B7280;
+    color: var(--fontGrey);
   }
 
   .span2 {

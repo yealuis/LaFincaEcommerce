@@ -1,0 +1,25 @@
+.principalImage {
+  height: 500px;
+  position: relative;
+}
+
+.image {
+  object-fit: cover;
+  border-radius: 0.375rem;
+}
+
+.secondaryImagesDiv {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.secondaryImage {
+  width: 25%;
+  height: 8rem;
+  position: relative;
+  gap: 1rem;
+  margin-top: 2rem;
+  cursor: pointer;
+}

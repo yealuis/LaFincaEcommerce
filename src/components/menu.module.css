@@ -6,7 +6,7 @@
 
 .menuBar {
   position: absolute;
-  background-color: rgba(231, 247, 231, 0.979);
+  background-color: var(--lafincaLightGreen);
   color: black;
   left: 0;
   top: 4.375rem;

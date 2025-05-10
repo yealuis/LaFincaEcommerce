@@ -27,21 +27,15 @@
 }
 
 .bgOne {
-  background-image: linear-gradient(to right, var(--tw-gradient-stops));
-  background-color: #FFFBEB; 
-  background-color: #FDF2F8;
+  background-image: linear-gradient(to right, #fcefbe, #fcd0e8);
 }
 
 .bgTwo {
-  background-image: linear-gradient(to right, var(--tw-gradient-stops));
-  background-color: #FDF2F8; 
-  background-color: #EFF6FF;
+  background-image: linear-gradient(to right, #fcd0e8, #b6d6ff);
 }
 
 .bgThree {
-  background-image: linear-gradient(to right, var(--tw-gradient-stops));
-  background-color: #EFF6FF; 
-  background-color: #FFFBEB;
+  background-image: linear-gradient(to right, #b6d6ff, #fcefbe);
 }
 
 .slideText {

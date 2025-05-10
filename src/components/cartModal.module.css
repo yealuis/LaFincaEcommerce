@@ -61,7 +61,7 @@
 .productDescription {
   font-size: 0.75rem;
   line-height: 1rem;
-  color: #4e5158;
+  color: var(--fontGrey);
 }
 
 .productBottom {
@@ -72,7 +72,7 @@
 }
 
 .productSpanQuantity {
-  color: #4e5158;
+  color: var(--fontGrey);
 }
 
 .productSpanRemove {
@@ -92,7 +92,7 @@
   margin-bottom: 1rem;
   font-size: 0.875rem;
   line-height: 1.25rem;
-  color: #4e5158;
+  color: var(--fontGrey);
 }
 
 .buttonContainer {
@@ -118,7 +118,7 @@
 
 .payButton {
   color: black;
-  background-color: rgb(49, 180, 49);
+  background-color: var(--lafincaGreen);
   box-shadow: inset 0 0 0 2px rgb(43, 158, 43);
   border: 2px solid black;
 }

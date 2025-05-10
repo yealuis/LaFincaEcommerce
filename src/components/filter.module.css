@@ -16,7 +16,7 @@
   font-size: 0.75rem;
   line-height: 1rem;
   font-weight: 500;
-  background-color: #e7f7e7fa;
+  background-color: var(--lafincaLightGreen);
 }
 
 .filterInput {

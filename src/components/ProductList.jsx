@@ -5,7 +5,7 @@ import styles from "./productList.module.css"
 const ProductList = () => {
   return (
     <div className={styles.productListContainer}>
-      <Link href="/product" className={styles.productLink}>
+      <Link href="/productos/a" className={styles.productLink}>
         <div className={styles.productContainer}>
           <Image src="/isopan.webp" alt="product" fill sizes="25vw" className={`${styles.productImages} ${styles.productImageTop}`}/>
           <Image src="/isopan2.webp" alt="product" fill sizes="25vw" className={styles.productImages}/>
@@ -17,9 +17,9 @@ const ProductList = () => {
         <div className={styles.productDescription}>Descripción del Producto</div>
         <button className={styles.addToCart}>Agregar al carrito</button>
       </Link>
-      <Link href="/product" className={styles.productLink}>
+      <Link href="/productos/a" className={styles.productLink}>
         <div className={styles.productContainer}>
-          <Image src="/boldenona.webp" alt="product" fill sizes="25vw" className={`${styles.productImages} ${styles.productImageTop}`}/>
+          <Image src="/Boldenona.webp" alt="product" fill sizes="25vw" className={`${styles.productImages} ${styles.productImageTop}`}/>
           <Image src="/reveex.webp" alt="product" fill sizes="25vw" className={styles.productImages}/>
         </div>
         <div className={styles.productData}>
@@ -29,7 +29,7 @@ const ProductList = () => {
         <div className={styles.productDescription}>Descripción del Producto</div>
         <button className={styles.addToCart}>Agregar al carrito</button>
       </Link>
-      <Link href="/product" className={styles.productLink}>
+      <Link href="/productos/a" className={styles.productLink}>
         <div className={styles.productContainer}>
           <Image src="/bovinet.webp" alt="product" fill sizes="25vw" className={`${styles.productImages} ${styles.productImageTop}`}/>
           <Image src="/reveex.webp" alt="product" fill sizes="25vw" className={styles.productImages}/>
@@ -41,7 +41,7 @@ const ProductList = () => {
         <div className={styles.productDescription}>Descripción del Producto</div>
         <button className={styles.addToCart}>Agregar al carrito</button>
       </Link>
-      <Link href="/product" className={styles.productLink}>
+      <Link href="/productos/a" className={styles.productLink}>
         <div className={styles.productContainer}>
           <Image src="/mastiveexRetard.webp" alt="product" fill sizes="25vw" className={`${styles.productImages} ${styles.productImageTop}`}/>
           <Image src="/reveex.webp" alt="product" fill sizes="25vw" className={styles.productImages}/>
