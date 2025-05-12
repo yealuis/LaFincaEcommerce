@@ -18,21 +18,21 @@ const CategoryList = () => {
           <div className={style.categoryContainer}>
             <Image src={"/bufalo.webp"} alt="Bufalo" fill sizes="20vw" className={style.categoryImage} />
           </div>
-          <h1 className={style.categoryTitle}>Bufalos</h1>
+          <h1 className={style.categoryTitle}>Ganadería</h1>
         </Link>
         {/*Categoria */}
         <Link href={"/productos?cat=test"} className={style.categoryLink}>
           <div className={style.categoryContainer}>
             <Image src={"/vaca.webp"} alt="Vaca" fill sizes="20vw" className={style.categoryImage} />
           </div>
-          <h1 className={style.categoryTitle}>Vacas</h1>
+          <h1 className={style.categoryTitle}>Ganadería</h1>
         </Link>
         {/*Categoria */}
         <Link href={"/productos?cat=test"} className={style.categoryLink}>
           <div className={style.categoryContainer}>
-            <Image src={"/aves.webp"} alt="Aves" fill sizes="20vw" className={style.categoryImage} />
+            <Image src={"/aves.webp"} alt="Avicultura" fill sizes="20vw" className={style.categoryImage} />
           </div>
-          <h1 className={style.categoryTitle}>Aves</h1>
+          <h1 className={style.categoryTitle}>Avicultura</h1>
         </Link>
         {/*Categoria */}
         <Link href={"/productos?cat=test"} className={style.categoryLink}>
@@ -46,21 +46,21 @@ const CategoryList = () => {
           <div className={style.categoryContainer}>
             <Image src={"/bufalo.webp"} alt="Bufalo" fill sizes="20vw" className={style.categoryImage} />
           </div>
-          <h1 className={style.categoryTitle}>Bufalos</h1>
+          <h1 className={style.categoryTitle}>Ganadería</h1>
         </Link>
         {/*Categoria */}
         <Link href={"/productos?cat=test"} className={style.categoryLink}>
           <div className={style.categoryContainer}>
             <Image src={"/vaca.webp"} alt="Vaca" fill sizes="20vw" className={style.categoryImage} />
           </div>
-          <h1 className={style.categoryTitle}>Vacas</h1>
+          <h1 className={style.categoryTitle}>Ganadería</h1>
         </Link>
         {/*Categoria */}
         <Link href={"/productos?cat=test"} className={style.categoryLink}>
           <div className={style.categoryContainer}>
             <Image src={"/aves.webp"} alt="Aves" fill sizes="20vw" className={style.categoryImage} />
           </div>
-          <h1 className={style.categoryTitle}>Aves</h1>
+          <h1 className={style.categoryTitle}>Avicultura</h1>
         </Link>
       </div>
     </div>

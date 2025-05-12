@@ -13,7 +13,7 @@ const SearchBar = () => {
     const name = formData.get("name")
 
     if (name) {
-      router.push(`/list?name=${name}`)
+      router.push(`/productos?name=${name}`)
     }
   }
 

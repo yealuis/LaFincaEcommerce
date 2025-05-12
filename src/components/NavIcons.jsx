@@ -32,8 +32,8 @@ const NavIcons = () => {
         </div>
       )}
       <FontAwesomeIcon icon={faBell} className={styles.awesomeIcons} />
-      <div className={styles.cartContainer}>
-        <FontAwesomeIcon icon={faCartShopping} className={styles.awesomeIcons} onClick={() => setIsCartOpen((prev) => !prev)} />
+      <div className={styles.cartContainer} onClick={() => setIsCartOpen((prev) => !prev)}>
+        <FontAwesomeIcon icon={faCartShopping} className={styles.awesomeIcons} />
         <div className={styles.cartCounter}>
           2
           {/*counter*/}
