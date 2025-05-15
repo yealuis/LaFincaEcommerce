@@ -27,9 +27,8 @@
 }
 
 .productImages {
-  background-color: --lafincaGreen;
   width: 100%;
-  top: 5rem;
+  top: 1rem;
   height: max-content;
 
   @media (min-width: 1024px) {

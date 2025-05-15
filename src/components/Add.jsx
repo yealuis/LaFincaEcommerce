@@ -3,7 +3,7 @@ import { useState } from "react"
 import styles from "./add.module.css"
 
 const Add = () => {
-  const stockNumber = 4
+  const stockNumber = 120
   const [quantity, setQuantity] = useState(1)
 
   const handleQuantity = (type) => {
@@ -25,7 +25,7 @@ const Add = () => {
             {quantity}
             <button className={styles.quantityButton} onClick={() => handleQuantity("i")} disabled={quantity >= stockNumber}>+</button>
           </div>
-          <div className={styles.quantityLeftInfo}>Solo <span style={{color:'#ed8936'}}>4 restantes!</span> <br />No pierdas la oportunidad</div>
+          <div className={styles.quantityLeftInfo}>Solo <span style={{color:'#ed8936'}}>{stockNumber} restantes!</span> <br />No pierdas la oportunidad</div>
         </div>
         <button className={styles.addButton}>Añadir al carrito</button>
       </div>
