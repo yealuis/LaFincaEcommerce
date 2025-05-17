@@ -37,6 +37,20 @@
   background-color: transparent;
 }
 
+.quantityInput{
+  border: none;
+  background-color: var(--lafincaGreen);
+  text-align: center;
+  padding: 1rem 0;
+  -moz-appearance: textfield;
+}
+
+.quantityInput::-webkit-outer-spin-button,
+.quantityInput::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 .quantityLeftInfo {
   font-size: 0.875rem;
   line-height: 1.25rem;

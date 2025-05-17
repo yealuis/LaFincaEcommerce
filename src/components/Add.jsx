@@ -15,6 +15,13 @@ const Add = () => {
     }
   }
 
+  const handleManualQuantity = (event) => {
+    const value = Number(event.target.value)
+    if (!isNaN(value) && value >= 1 && value <= stockNumber) {
+      setQuantity(value)
+    }
+  }
+
   return (
     <div className={styles.addContainer}>
       <h4 className={styles.quantityTitle}>Escoge una cantidad</h4>
@@ -22,7 +29,7 @@ const Add = () => {
         <div className={styles.quantityContainerDiv}>
           <div className={styles.quantityButtons}>
             <button className={styles.quantityButton} onClick={() => handleQuantity("d")} disabled={quantity <= 1}>-</button>
-            {quantity}
+            <input type="number" value={quantity} onChange={(e) => handleManualQuantity(e)} min={1} max={stockNumber} className={styles.quantityInput} />
             <button className={styles.quantityButton} onClick={() => handleQuantity("i")} disabled={quantity >= stockNumber}>+</button>
           </div>
           <div className={styles.quantityLeftInfo}>Solo <span style={{color:'#ed8936'}}>{stockNumber} restantes!</span> <br />No pierdas la oportunidad</div>
