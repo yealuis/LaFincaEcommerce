@@ -1,4 +1,3 @@
-import Image from "next/image";
 import styles from "./page.module.css";
 import Slider from "../components/Slider";
 import ProductList from "../components/ProductList";
@@ -11,7 +10,7 @@ export default function Home() {
       <main className={styles.main}>
         <div className={styles.productList}>
           <h1 className={styles.productH1}>Productos Destacados</h1>
-          <ProductList/>
+          <ProductList filterType="featured" />
         </div>
         <div className={styles.categoryList}>
           <h1 className={styles.categoryH1}>Categorias</h1>
@@ -19,7 +18,7 @@ export default function Home() {
         </div>
         <div className={styles.productList}>
           <h1 className={styles.productH1}>Nuevos Productos</h1>
-          <ProductList/>
+          <ProductList filterType="news" />
         </div>
       </main>
     </div>
