@@ -1,8 +1,9 @@
+"use server"
+
 import { neon } from "@neondatabase/serverless";
 
-const sql = neon(process.env.DATABASE_URL)
-
 export async function getFilteredProducts(filterType) {
+  const sql = neon(process.env.DATABASE_URL)
   if (filterType === "featured") {
     return await sql`
       SELECT codprod, descrip, precio1, pedido
