@@ -1,6 +1,7 @@
 .productPageContainer {
   padding-left: 1rem;
   padding-right: 1rem;
+  padding-bottom: 5rem;
   position: relative;
   display: flex;
   flex-direction: column;

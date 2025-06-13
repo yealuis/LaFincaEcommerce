@@ -1,0 +1,15 @@
+.alliesContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 2rem 20%;
+}
+
+.alliesLink {
+  height: 7.5rem;
+  position: relative;
+}
+
+.images {
+  object-fit: contain;
+}

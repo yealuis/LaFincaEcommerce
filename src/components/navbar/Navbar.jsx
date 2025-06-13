@@ -25,9 +25,8 @@ const Navbar = () => {
             <div className={styles.navMenu}>
               <Link href="/">Inicio</Link>
               <Link href="/productos">Productos</Link>
-              <Link href="/">Ofertas</Link>
-              <Link href="/">Sobre Nosotros</Link>
-              <Link href="/">Contacto</Link>
+              <Link href="/sobre-nosotros">Sobre Nosotros</Link>
+              <Link href="/login">Iniciar Sesión</Link>
             </div>
           </div>
         {/*Derecha*/}

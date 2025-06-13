@@ -1,12 +1,20 @@
 'use client'
 import Image from "next/image"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import styles from "./productImages.module.css"
+import { useParams } from "next/navigation"
+import { getProductInfo } from "@/lib/db"
 
-const images = [
+
+const ProductImages = () => {
+  const [index, setIndex] = useState(0)
+  const params = useParams()
+  const [product, setProduct] = useState([])
+
+  const images = [
   {
     id: "1",
-    url: "/isopan.webp",
+    url: `/${product.descrip}.webp`,
     alt: "Isopan"
   },
   {
@@ -21,8 +29,9 @@ const images = [
   }
 ]
 
-const ProductImages = () => {
-  const [index, setIndex] = useState(0)
+  useEffect(() => {
+    getProductInfo(params.slug).then((data) => setProduct(data[0]))
+  },[params.slug])
 
   return (
 

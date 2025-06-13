@@ -27,7 +27,7 @@ const NavIcons = () => {
       <FontAwesomeIcon icon={faUser} className={styles.awesomeIcons} onClick={handleProfile} />
       {isProfileOpen && (
         <div className={styles.profileBar}>
-          <Link href="/profile">Perfil</Link>
+          <Link href="/perfil">Perfil</Link>
           <div className={styles.div} >Cerrar Sesión</div>
         </div>
       )}

@@ -15,11 +15,9 @@ const Menu = () => {
         <div className={styles.menuBar}>
           <Link href="/">Inicio</Link>
           <Link href="/productos">Productos</Link>
-          <Link href="/">Ofertas</Link>
-          <Link href="/">Sobre Nosotros</Link>
-          <Link href="/">Contacto</Link>
-          <Link href="/">Cerrar Sesion</Link>
-          <Link href="/">Carrito</Link>
+          <Link href="/sobre-nosotros">Sobre Nosotros</Link>
+          <Link href="/login">Iniciar Sesión</Link>
+          <Link href="/carrito">Carrito</Link>
         </div>
       )}
     </div>

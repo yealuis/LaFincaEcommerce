@@ -1,26 +1,25 @@
 .footer {
-  padding: 6rem 1rem;
+  padding: 3rem 1rem;
   background-color: var(--lafincaLightGreen);
   font-size: 0.875rem;
   line-height: 1.25rem;
-  margin-top: 6rem;
-
+  text-align: center;
 
   @media (min-width: 768px) {
     padding-left: 2rem;
     padding-right: 2rem;
   }
   @media (min-width: 1024px) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  @media (min-width: 1280px) {
     padding-left: 4rem;
     padding-right: 4rem;
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 1536px) {
     padding-left: 8rem;
     padding-right: 8rem;
-  }
-  @media (min-width: 1536px) {
-    padding-left: 16rem;
-    padding-right: 16rem;
   }
 }
 
@@ -80,7 +79,8 @@
 .centerInfo {
   display: flex; 
   flex-direction: column; 
-  gap: 1.5rem;
+  height: 75%;
+  gap: 3rem;
 }
 
 .subscribeDiv {
@@ -91,20 +91,23 @@
     width: 75%;
   }
   .button {
-    width: 25%;
+    width: 30%;
     color: #ffffff;
     background-color: red;
   }
+
+  @media (max-width: 768px) {
+    padding: 0 20%;
+  }
 }
 
-.socialIcons {
-   display: flex;
-   gap: 2rem;
-}
-
-.paymentsIcons {
+.icons {
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: 768px) {
+    padding: 0 20%;
+  }
 }
 
 .bottom {
@@ -137,4 +140,15 @@
   .span2 {
     font-weight: 500;
   }
+}
+
+.awesomeIcons {
+  cursor: pointer;
+  font-size: 27px;
+}
+
+.divSeparator {
+  background-color: var(--lafincaGreen);
+  height: 0.5rem;
+  width: 100%;
 }

@@ -5,30 +5,30 @@ import styles from "./productList.module.css"
 import { useEffect, useState } from "react"
 import { getFilteredProducts } from "@/lib/db"
 
-const ProductList = ({ filterType }) => {
+const ProductList = ({ filterType, currentPage, limit, searchTerm }) => {
 
   const [products, setProducts] = useState([])
 
   useEffect(() => {
-    getFilteredProducts(filterType).then(setProducts)
-  }, [filterType])
+    getFilteredProducts(filterType, currentPage, limit, searchTerm).then(setProducts)
+  }, [filterType, currentPage, limit, searchTerm])
 
   return (
     <div className={styles.productListContainer}>
-      {products.map((product) => {
+      {products.map(product => 
         <Link key={product.codprod} href={`/productos/${product.codprod}`} className={styles.productLink}>
           <div className={styles.productContainer}>
-            <Image src="/isopan.webp" alt={product.descrip} fill sizes="25vw" className={`${styles.productImages} ${styles.productImageTop}`}/>
-            <Image src="/reveex.webp" alt="product" fill sizes="25vw" className={styles.productImages}/>
+            <Image src={`/${product.descrip}.webp`} alt={product.descrip} fill sizes="25vw" className={`${styles.productImages} ${styles.productImageTop}`} />
+            <Image src={`/${product.marca}.webp`} alt={product.marca} fill sizes="25vw" className={styles.productImages}/>
           </div>
           <div className={styles.productData}>
             <span className={styles.productName}>{product.descrip}</span>
-            <span className={styles.productPrice}>{product.price1}Bs</span>
+            <span className={styles.productPrice}>{parseFloat(product.precio1ds).toFixed(2)}$</span>
           </div>
-          <div className={styles.productDescription}>Descripción del Producto</div>
+          <div className={styles.productDescription}>{product.descrip}</div>
           <button className={styles.addToCart}>Agregar al carrito</button>
         </Link>
-      })}
+      )}
     </div>
   )
 }

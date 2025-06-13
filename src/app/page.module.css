@@ -54,3 +54,21 @@
     padding-right: 16rem;
   }
 }
+
+.allies {
+  margin-top: 6rem;
+  background-color: var(--lafincaLightGreen);
+}
+
+.alliesH1 {
+  font-size: 2.5rem;
+  line-height: 4rem;
+  text-align: center;
+  padding-top: 2rem;
+}
+
+.divSeparator {
+  background: linear-gradient(0deg, var(--lafincaLightGreen) 0%, #fff 100%);
+  height: 1rem;
+  width: 100%;
+}
