@@ -56,10 +56,6 @@
   font-weight: 500;
 }
 
-.description {
-  color: var(--fontGrey);
-}
-
 .divSeparator {
   background-color: #F3F4F6;
   height: 2px;
@@ -69,27 +65,20 @@
   display: flex;
   align-items: center;
   gap: 1rem;
+  justify-content: space-between;
 }
 
-.price {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-  color: var(--fontGrey);
-  text-decoration: line-through;
-}
-
-.discountPrice {
-  font-weight: 500;
+.secondaryTitle {
+  font-weight: 600;
   font-size: 1.5rem;
   line-height: 2rem;
 }
 
 .productInfo {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
 }
 
-.secondaryTitle {
-  margin-bottom: 1rem; 
-  font-weight: 500;
+.center {
+  text-align: center;
 }

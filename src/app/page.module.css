@@ -1,74 +1,32 @@
-.productList {
-  margin-top: 6rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-
-  @media (min-width: 768px) {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-  @media (min-width: 1024px) {
-    padding-left: 4rem;
-    padding-right: 4rem;
-  }
-  @media (min-width: 1280px) {
-    padding-left: 8rem;
-    padding-right: 8rem;
-  }
-  @media (min-width: 1536px) {
-    padding-left: 16rem;
-    padding-right: 16rem;
-  }
+.loading {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
-.productH1 {
-  font-size: 1.5rem;
-  line-height: 2rem;
+.page {
+  background-color: var(--lightBlue);
 }
 
-.categoryList {
-  margin-top: 6rem;
+.section {
+  padding: 5rem 2rem;
 }
 
-.categoryH1 {
-  font-size: 1.5rem;
-  line-height: 2rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  margin-bottom: 3rem;
-
-  @media (min-width: 768px) {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-  @media (min-width: 1024px) {
-    padding-left: 4rem;
-    padding-right: 4rem;
-  }
-  @media (min-width: 1280px) {
-    padding-left: 8rem;
-    padding-right: 8rem;
-  }
-  @media (min-width: 1536px) {
-    padding-left: 16rem;
-    padding-right: 16rem;
-  }
-}
-
-.allies {
-  margin-top: 6rem;
-  background-color: var(--lafincaLightGreen);
-}
-
-.alliesH1 {
-  font-size: 2.5rem;
-  line-height: 4rem;
+.header {
   text-align: center;
-  padding-top: 2rem;
+  margin-bottom: 3rem;
 }
 
-.divSeparator {
-  background: linear-gradient(0deg, var(--lafincaLightGreen) 0%, #fff 100%);
-  height: 1rem;
-  width: 100%;
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+.divider {
+  width: 100px;
+  height: 4px;
+  background: var(--lafincaGreen);
+  margin: 1rem auto 2rem;
 }

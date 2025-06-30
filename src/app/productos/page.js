@@ -1,32 +1,46 @@
 'use client'
 import styles from "./page.module.css"
 import Image from "next/image"
-import Filter from "@/components/Filter"
-import ProductList from "@/components/ProductList"
-import Pagination from "@/components/Pagination"
+import Filter from "@/components/productList/Filter"
+import ProductList from "@/components/productList/ProductList"
+import Pagination from "@/components/productList/Pagination"
 import usePagination from "@/hooks/usePagination"
+import { useEffect, useState } from "react"
+import { useSearchParams } from "next/navigation"
 
 const ProductsPage = () => {
-
   const { currentPage, setCurrentPage, totalPages, limit, searchTerm } = usePagination()
+  const [filters, setFilters] = useState({})
+
+  const searchParams = useSearchParams()
+
+  useEffect(() => {
+    setFilters({
+      lab: searchParams.get("lab") || "",
+      min: searchParams.get("min") || "",
+      max: searchParams.get("max") || "",
+      cat: searchParams.get("cat") || "",
+      sort: searchParams.get("sort") || ""
+    })
+  }, [searchParams])
 
   return (
     <div className={styles.page}>
       {/* CAMPAÑA */}
       <div className={styles.campainContainer}>
-        <div className={styles.campain}>
-          <h1 className={styles.campainH1}> Consigue un 50% en<br /> Productos Seleccionados</h1>
-          <button className={styles.campainButton}>Compra Ahora</button>
-        </div>
         <div className={styles.campainImageContainer}>
-          <Image src="/ISOPAN DE 250 ML.webp" alt="isopan" fill className={styles.campainImage}></Image>
+          <Image src="/lafincaLogoH.webp" alt="isopan" fill className={styles.campainImage}></Image>
+        </div>
+        <div className={styles.campain}>
+          <h1 className={styles.campainH1}> Venta al mayor y detal de insumos, Medicinas Veterianarias y todo lo relacionada con el campo</h1>
+          {/*<button className={styles.campainButton}>Compra Ahora</button>*/}
         </div>
       </div>
       {/* Filtro */}
-      <Filter/>
+      <Filter onFilterChange={setFilters} />
       {/* Productos */}
       <h1 className={styles.productListH1}>Productos</h1>
-      <ProductList filterType={"all"} currentPage={currentPage} limit={limit} searchTerm={searchTerm} />
+      <ProductList filterType={"all"} currentPage={currentPage} limit={limit} searchTerm={searchTerm} filters={filters} />
       {totalPages && (
         <Pagination currentPage={currentPage} setCurrentPage={setCurrentPage} totalPages={totalPages}/>
       )}

@@ -1,7 +1,6 @@
-import ProductImages from "@/components/ProductImages"
+import ProductImages from "@/components/ProductPage/ProductImages"
 import styles from "./page.module.css"
-import CustomizeProducts from "@/components/CustomizeProducts"
-import Add from "@/components/Add"
+import Add from "@/components/ProductPage/Add"
 import { getProductInfo } from "@/lib/db"
 import { notFound } from "next/navigation"
 
@@ -25,10 +24,16 @@ const ProductSinglePage = async ({ params }) => {
         <h1 className={styles.title}>{product.descrip}</h1>
         <p className={styles.description}>{product.descrip2}</p>
         <div className={styles.priceDiv}>
-          <h3 className={styles.discountPrice}>{parseFloat(product.precio1ds).toFixed(2)}$</h3>
+          <div className={styles.productInfo}>
+            <h3 className={styles.secondaryTitle}>Precio</h3>
+            <p className={styles.description}>{parseFloat(product.precio1ds).toFixed(2)}$</p>
           {/*<h2 className={styles.discountPrice}>45$</h2>*/}
+          </div>
+          <div className={styles.productInfo}>
+            <h4 className={styles.secondaryTitle}>Cantidad de unidades por caja</h4>
+            <p className={`${styles.description} ${styles.center}`}>{product.unidadesxcaja}</p>
+          </div>
         </div>
-        <CustomizeProducts/>
         <Add/>
         <div className={styles.divSeparator}/>
         <div className={styles.productInfo}>
@@ -37,15 +42,15 @@ const ProductSinglePage = async ({ params }) => {
         </div>
         <div className={styles.productInfo}>
           <h4 className={styles.secondaryTitle}>Composición</h4>
-          <p className={styles.description}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos suscipit sequi dignissimos consequuntur omnis tenetur alias at fugiat laborum illo totam enim et voluptas reiciendis mollitia, ratione maiores labore autem!</p>
+          <p className={styles.description}>{product.composicion}</p>
         </div>
         <div className={styles.productInfo}>
           <h4 className={styles.secondaryTitle}>Indicaciones</h4>
-          <p className={styles.description}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos suscipit sequi dignissimos consequuntur omnis tenetur alias at fugiat laborum illo totam enim et voluptas reiciendis mollitia, ratione maiores labore autem!</p>
+          <p className={styles.description}>{product.indicaciones}</p>
         </div>
         <div className={styles.productInfo}>
           <h4 className={styles.secondaryTitle}>Administración</h4>
-          <p className={styles.description}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos suscipit sequi dignissimos consequuntur omnis tenetur alias at fugiat laborum illo totam enim et voluptas reiciendis mollitia, ratione maiores labore autem!</p>
+          <p className={styles.description}>{product.administracion}</p>
         </div>
       </div>
     </div>

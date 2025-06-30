@@ -34,7 +34,7 @@ const Footer = () => {
               <h1 className={styles.h1}>COMPAÑIA</h1>
               <div className={styles.centerInfo}>
                 <Link href="/sobre-nosotros">Sobre Nosotros</Link>
-                <Link href="/sobre-nosotros#vendedores">Vendedores</Link>
+                <Link href="/sobre-nosotros#aliados">Aliados</Link>
                 <Link href="/sobre-nosotros#contacto">Contactanos</Link>
               </div>
             </div>

@@ -1,6 +1,7 @@
 'use client'
 import { useState } from "react"
 import styles from './login.module.css'
+import Button from "./UI/Button"
 
 var MODE
 (function(MODE) {
@@ -29,6 +30,8 @@ const Login = () => {
 
   return (
     <div className={styles.loginContainer}>
+      {/* Gradiente Superpuesto */}
+      <div className={styles.mask}></div>
       <form className={styles.loginForm} >
         <h1 className={styles.formTitle} >{formTitle}</h1>
         {mode === MODE.REGISTER ? (
@@ -59,9 +62,9 @@ const Login = () => {
             Olvidaste tu contrasena?
           </div>
         )}
-        <button className={styles.loginButton} disabled={isLoading}>
+        <Button variant="primary" disabled={isLoading}>
           {isLoading ? "Cargando..." : buttonTitle}
-        </button>
+        </Button>
         {error && <div className={styles.error}>{error}</div>}
         {mode === MODE.LOGIN && (
           <div className={styles.modeChange} onClick={() => setMode(MODE.REGISTER)}>

@@ -1,8 +1,11 @@
-import Profile from "@/components/Profile"
+import ProfileSection from '@/components/profile/ProfileSection'
+import styles from './page.module.css'
 
 const profilePage = () => {
   return (
-    <Profile />
+    <div className={styles.profilePage}>
+      <ProfileSection />
+    </div>
   )
 }
 

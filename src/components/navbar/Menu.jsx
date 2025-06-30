@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import styles from './menu.module.css'
+import SearchBar from './SearchBar'
 
 const Menu = () => {
   const [open, setOpen] = useState(false)
@@ -13,11 +14,14 @@ const Menu = () => {
       <FontAwesomeIcon icon={faBars} className={styles.menuIcon} onClick={() => setOpen((prev) => !prev)} />
       {open && (
         <div className={styles.menuBar}>
-          <Link href="/">Inicio</Link>
-          <Link href="/productos">Productos</Link>
-          <Link href="/sobre-nosotros">Sobre Nosotros</Link>
-          <Link href="/login">Iniciar Sesión</Link>
-          <Link href="/carrito">Carrito</Link>
+          <div className={styles.searchBar}>
+            <SearchBar setOpen={setOpen} />
+          </div>
+          <Link href="/" onClick={() => setOpen(false)}>Inicio</Link>
+          <Link href="/productos" onClick={() => setOpen(false)}>Productos</Link>
+          <Link href="/sobre-nosotros" onClick={() => setOpen(false)}>Sobre Nosotros</Link>
+          <Link href="/login" onClick={() => setOpen(false)}>Iniciar Sesión</Link>
+          <Link href="/carrito" onClick={() => setOpen(false)}>Carrito</Link>
         </div>
       )}
     </div>

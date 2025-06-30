@@ -1,14 +1,11 @@
 "use client"
-import { useRouter, useSearchParams } from "next/navigation"
+import { useRouter } from "next/navigation"
 import styles from "./navbar.module.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons"
 
-const SearchBar = () => {
-  const searchParams = useSearchParams()
+const SearchBar = ({setOpen}) => {
   const router = useRouter()
-
-  const currentPage = parseInt(searchParams.get("page")) || 1
 
   const handleSearch = e => {
     e.preventDefault()
@@ -18,6 +15,7 @@ const SearchBar = () => {
     const currentParams = new URLSearchParams(window.location.search)
     currentParams.set("name", name)
     router.push(`/productos?${currentParams.toString()}`)
+    if (setOpen) setOpen(false)
   }
 
   return (

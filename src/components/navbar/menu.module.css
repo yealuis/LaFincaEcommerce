@@ -21,3 +21,10 @@
   line-height: 1.75rem;
   z-index: 10;
 }
+
+.searchBar {
+  width: 80%;
+  background-color: var(--lafincaGreen);
+  padding: 0.5rem;
+  border-radius: 0.375rem;
+}

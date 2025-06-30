@@ -1,0 +1,36 @@
+.filterContainer {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.filtersGroup {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 1rem;
+}
+
+.filterSelect {
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 500;
+  background-color: var(--lafincaLightGreen);
+}
+
+.filterInput {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  border-radius: 1rem;
+  padding-left: 0.5rem;
+  width: 6rem;
+  box-shadow: inset 0 0 0 1 #9ca3af;
+}
+
+.filterSort {
+  background-color: white;
+  box-shadow: inset 0 0 0 1 #9ca3af;
+}

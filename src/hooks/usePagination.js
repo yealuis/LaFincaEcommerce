@@ -1,5 +1,5 @@
 'use client'
-import { useState, useEffect } from "react"
+import { useState, useEffect, useMemo } from "react"
 import { getTotalProducts } from "@/lib/db"
 import { useSearchParams, useRouter } from "next/navigation"
 
@@ -8,23 +8,30 @@ const usePagination = () => {
   const searchTerm = searchParams.get("name") || ""
   const router = useRouter()
   const pageFromUrl = parseInt(searchParams.get("page")) || 1
+  const filters = useMemo(() =>{
+    searchParams.get("lab") || "";
+    searchParams.get("min") || "";
+    searchParams.get("max") || "";
+    searchParams.get("cat") || "";
+    searchParams.get("sort") || ""
+  }, [searchParams])
 
   const [currentPage, setCurrentPage] = useState(pageFromUrl)
-  const [totalPages, setTotalPages] = useState(null)
+  const [totalPages, setTotalPages] = useState()
   const limit = 20
 
   useEffect(() => {
     async function fetchTotalProducts() {
-      const total = await getTotalProducts(searchTerm)
+      const total = await getTotalProducts(searchTerm, filters)
       setTotalPages(Math.ceil(total / limit))
     }
     fetchTotalProducts()
-  }, [searchTerm])
+  }, [searchTerm, filters])
 
   useEffect(() => {
     const currentParams = new URLSearchParams(window.location.search)
     currentParams.set("page", currentPage)
-    router.push(`/productos?${currentParams.toString()}`, { scroll: false })
+    router.push(`/productos?${currentParams.toString()}`)
   }, [currentPage, router])
 
   useEffect(() => {
@@ -33,7 +40,14 @@ const usePagination = () => {
   }
 }, [currentPage, totalPages])
 
-  return { currentPage, setCurrentPage, totalPages, limit, searchTerm }
+  useEffect(() => {
+    const pageFromUrl = parseInt(searchParams.get("page")) || 1
+    if (pageFromUrl !== currentPage) {
+      setCurrentPage(pageFromUrl)
+    }
+  },[searchParams, currentPage] )
+
+  return { currentPage, setCurrentPage, totalPages, limit, searchTerm, filters }
 }
 
 export default usePagination
