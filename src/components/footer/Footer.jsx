@@ -56,22 +56,22 @@ const Footer = () => {
             </div>
           </div>
           {/*Derecha*/}
-          <div className={styles.sides}>
-            <h1 className={styles.h1}>SUSCRIBETE</h1>
-            <p>¡Se el primero en recibir información sobre nuestras ultimas ofertas, promociones y mucho más!</p>
-            <div className={styles.subscribeDiv}>
-              <input type="text" placeholder="Email" className={styles.input} />
-              <button className={styles.button}>UNETE</button>
+            <div className={styles.sides}>
+              {/*<h1 className={styles.h1}>SUSCRIBETE</h1>
+              <p>¡Se el primero en recibir información sobre nuestras ultimas ofertas, promociones y mucho más!</p>
+              <div className={styles.subscribeDiv}>
+                <input type="text" placeholder="Email" className={styles.input} />
+                <button className={styles.button}>UNETE</button>
+              </div>*/}
+              <span className={styles.span}>Formas de pago</span>
+              <div className={styles.icons}>
+                <FontAwesomeIcon icon={faCcDiscover} className={styles.awesomeIcons}/>
+                <FontAwesomeIcon icon={faPaypal} className={styles.awesomeIcons}/>
+                <FontAwesomeIcon icon={faCcMastercard} className={styles.awesomeIcons}/>
+                <FontAwesomeIcon icon={faCcVisa} className={styles.awesomeIcons}/>
+                <FontAwesomeIcon icon={faBitcoin} className={styles.awesomeIcons}/>
+              </div>
             </div>
-            <span className={styles.span}>Formas de pago</span>
-            <div className={styles.icons}>
-              <FontAwesomeIcon icon={faCcDiscover} className={styles.awesomeIcons}/>
-              <FontAwesomeIcon icon={faPaypal} className={styles.awesomeIcons}/>
-              <FontAwesomeIcon icon={faCcMastercard} className={styles.awesomeIcons}/>
-              <FontAwesomeIcon icon={faCcVisa} className={styles.awesomeIcons}/>
-              <FontAwesomeIcon icon={faBitcoin} className={styles.awesomeIcons}/>
-            </div>
-          </div>
         </div>
         {/*Inferior*/}
         <div className={styles.bottom}>

@@ -49,8 +49,6 @@ export const CartProvider = ({ children }) => {
           name: product.descrip,
           price: Number(product.precio1ds),
           image: product.imagen1 ? `data:image/webp;base64,${product.imagen1}` : "/NO-DISPONIBLE.webp",
-          image2: product.imagen2 ? `data:image/webp;base64,${product.imagen2}` : "/NO-DISPONIBLE.webp",
-          image3: product.imagen3 ? `data:image/webp;base64,${product.imagen3}` : "/NO-DISPONIBLE.webp",
           quantity: quantity,
           max: product.existen
         }]

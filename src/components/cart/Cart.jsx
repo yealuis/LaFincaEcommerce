@@ -77,7 +77,7 @@ const Cart = () => {
               <span>Total</span>
               <span>${total.toFixed(2)}</span>
             </div>
-            
+            <Button className={styles.checkoutButton}>Pagar con Stripe</Button>
             <Link href="/carrito/checkout" className={styles.checkoutButton}>
               Proceder al Pago
             </Link>

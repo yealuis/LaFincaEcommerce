@@ -22,7 +22,6 @@ const ProductSinglePage = async ({ params }) => {
       {/* Texto */}
       <div className={styles.productText}>
         <h1 className={styles.title}>{product.descrip}</h1>
-        <p className={styles.description}>{product.descrip2}</p>
         <div className={styles.priceDiv}>
           <div className={styles.productInfo}>
             <h3 className={styles.secondaryTitle}>Precio</h3>

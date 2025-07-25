@@ -27,7 +27,7 @@ const slides = [
   {
     id: 3,
     title: "Septibron",
-    description: "Uno de nuetros productos mas comprados",
+    description: "Uno de nuestros productos mas comprados",
     img: "/septibron.webp",
     imgAlt: "Septibron",
     url: "/productos/1000081",

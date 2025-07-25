@@ -5,19 +5,19 @@ import { useSearchParams, useRouter } from "next/navigation"
 
 const usePagination = () => {
   const searchParams = useSearchParams()
-  const searchTerm = searchParams.get("name") || ""
   const router = useRouter()
   const pageFromUrl = parseInt(searchParams.get("page")) || 1
+  const searchTerm = searchParams.get("name") || ""
+
   const filters = useMemo(() =>{
-    searchParams.get("lab") || "";
-    searchParams.get("min") || "";
-    searchParams.get("max") || "";
-    searchParams.get("cat") || "";
-    searchParams.get("sort") || ""
+    lab: searchParams.get("lab") || "";
+    min: searchParams.get("min") || "";
+    max: searchParams.get("max") || "";
+    sort: searchParams.get("sort") || ""
   }, [searchParams])
 
   const [currentPage, setCurrentPage] = useState(pageFromUrl)
-  const [totalPages, setTotalPages] = useState()
+  const [totalPages, setTotalPages] = useState(0)
   const limit = 20
 
   useEffect(() => {
@@ -29,23 +29,19 @@ const usePagination = () => {
   }, [searchTerm, filters])
 
   useEffect(() => {
-    const currentParams = new URLSearchParams(window.location.search)
-    currentParams.set("page", currentPage)
-    router.push(`/productos?${currentParams.toString()}`)
-  }, [currentPage, router])
+    const urlPage = parseInt(searchParams.get("page")) || 1
+    if (urlPage !== currentPage) {
+        const params = new URLSearchParams(searchParams.toString())
+        params.set("page", currentPage)
+        router.replace(`/productos?${params.toString()}`, {scroll: false})
+    }
+  }, [currentPage, searchParams, router])
 
   useEffect(() => {
-  if (currentPage > totalPages) {
-    setCurrentPage(totalPages || 1)
+  if (totalPages > 0 && currentPage > totalPages) {
+    setCurrentPage(totalPages)
   }
 }, [currentPage, totalPages])
-
-  useEffect(() => {
-    const pageFromUrl = parseInt(searchParams.get("page")) || 1
-    if (pageFromUrl !== currentPage) {
-      setCurrentPage(pageFromUrl)
-    }
-  },[searchParams, currentPage] )
 
   return { currentPage, setCurrentPage, totalPages, limit, searchTerm, filters }
 }

@@ -26,7 +26,10 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="es">
+    <html
+      lang="es"
+      suppressHydrationWarning="true"
+      data-lt-installed="true">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <CartProvider>
           <header>

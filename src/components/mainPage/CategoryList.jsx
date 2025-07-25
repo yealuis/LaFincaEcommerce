@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import style from "./categorylist.module.css"
+import styles from "./categorylist.module.css"
 import { useEffect, useState } from "react"
 import { getLabInfo } from "@/lib/db"
 
@@ -15,15 +15,15 @@ const CategoryList = ({}) => {
   }, [])
   
   return (
-    <div className={style.categorylist}>
-      <div className={style.categoryListContainer}>
+    <div className={styles.categorylist}>
+      <div className={styles.categoryListContainer}>
       {/*Laboratorio */}
         {labs.map(lab => 
-          <Link href={`/productos?lab=${lab.marca}`} className={style.categoryLink} key={lab.marca}>
-            <div className={style.categoryContainer}>
-              <Image src={`/${lab.marca}.webp`} alt={lab.marca} fill sizes="20vw" className={style.categoryImage} />
+          <Link href={`/productos?lab=${lab.marca}`} className={styles.categoryLink} key={lab.marca}>
+            <div className={styles.categoryContainer}>
+              <Image src={lab.imagen1 ? `data:image/webp;base64,${lab.imagen1}` : "/NO-DISPONIBLE.webp"} alt={lab.marca} fill sizes="20vw" className={styles.categoryImage} />
             </div>
-            <h1 className={style.categoryTitle}>{lab.marca}</h1>
+            <h1 className={styles.categoryTitle}>{lab.marca}</h1>
           </Link>
         )}
       </div>

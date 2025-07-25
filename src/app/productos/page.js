@@ -19,10 +19,10 @@ const ProductsPage = () => {
       lab: searchParams.get("lab") || "",
       min: searchParams.get("min") || "",
       max: searchParams.get("max") || "",
-      cat: searchParams.get("cat") || "",
       sort: searchParams.get("sort") || ""
     })
-  }, [searchParams])
+
+  }, [searchParams, setCurrentPage])
 
   return (
     <div className={styles.page}>

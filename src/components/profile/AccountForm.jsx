@@ -1,5 +1,6 @@
 import styles from './profile.module.css'
 import Button from '../UI/Button'
+import auth from '../../auth'
 
 const AccountForm = () => {
   return (

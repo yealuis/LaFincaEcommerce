@@ -8,44 +8,28 @@ import Button from "@/components/UI/Button";
 
 const CheckoutPage = () => {
   const { cartItems, subtotal, clearCart } = useCart()
-  const [formData, setFormData] = useState({ name: "", email: "", address: "", cardNumber: "", expDate: "", cvv: ""})
+  const [email, setEmail] = useState("")
   const [isProcessing, setIsProcessing] = useState(false)
-  const [orderSuccess, setOrderSuccess] = useState(false)
+  const orderSuccess = false
 
   // Calcular totales (mismo cálculo que en carrito)
   const tax = subtotal * 0.0
   const total = subtotal + tax
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }))
-  }
-
-  const handleSubmit = async (e) => {
-    e.preventDefault()
+  const handleStripeCheckout = async () => {
     setIsProcessing(true)
 
     try {
-      // Guardar en PostgreSQL
-      const response = await fetch("/api/orders", {
+      const response = await fetch("/api/payment/stripe-session", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ customer: formData, items: cartItems, subtotal, shipping, tax, total })
+        headers: { "Content-Type": "application/json"},
+        body: JSON.stringify({ items: cartItems, email })
       })
-
-      if (!response.ok) throw new Error("Error al procesar el pedido")
-      
-      // Limpiar carrito y mostrar éxito
-      clearCart();
-      setOrderSuccess(true);
-      
+      const { url} = await response.json()
+      window.location.href = url
     } catch (error) {
-      console.error("Error en el checkout:", error)
-      alert("Ocurrió un error al procesar tu pedido")
-    } finally {
-      setIsProcessing(false);
+      console.error('Error iniciando el pago')
+      setIsProcessing(false)
     }
   }
 
@@ -69,7 +53,7 @@ const CheckoutPage = () => {
       <h1 className={styles.title}>Finalizar Compra</h1>
       
       <div className={styles.checkoutContent}>
-        <form onSubmit={handleSubmit} className={styles.form}>
+        <div className={styles.form}>
           <h2 className={styles.sectionTitle}>Información de Contacto</h2>
           <div className={styles.formGroup}>
             <label htmlFor="name">Nombre completo</label>
@@ -86,27 +70,12 @@ const CheckoutPage = () => {
             <textarea id="address" name="address" value={formData.address} onChange={handleChange} required rows="3" />
           </div>
           
-          <h2 className={styles.sectionTitle}>Información de Pago</h2>
-          <div className={styles.formGroup}>
-            <label htmlFor="cardNumber">Número de tarjeta</label>
-            <input type="text" id="cardNumber" name="cardNumber" value={formData.cardNumber} onChange={handleChange} required placeholder="1234 5678 9012 3456" />
+          <h2 className={styles.sectionTitle}>Método de pago</h2>
+          <div className={styles.paymentOptions}>
+            <Button onClick={handleStripeCheckout}>Stripe</Button>
+            <div id="paypal-button-container"/>
           </div>
-          
-          <div className={styles.cardDetails}>
-            <div className={styles.formGroup}>
-              <label htmlFor="expDate">Fecha de expiración</label>
-              <input type="text" id="expDate" name="expDate" value={formData.expDate} onChange={handleChange} required placeholder="MM/AA" />
-            </div>
-            
-            <div className={styles.formGroup}>
-              <label htmlFor="cvv">CVV</label>
-              <input type="text" id="cvv" name="cvv" value={formData.cvv} onChange={handleChange} required placeholder="123" />
-            </div>
-          </div>
-          <Button type="submit" variant="submit" disabled={isProcessing}>
-            {isProcessing ? "Procesando..." : "Completar Pedido"}
-          </Button>
-        </form>
+        </div>
         
         <div className={styles.orderSummary}>
           <h2 className={styles.summaryTitle}>Resumen del Pedido</h2>

@@ -39,13 +39,13 @@ const ProductImages = () => {
       <div className={styles.principalImage}>
         <Image src={images[index].url} alt="" fill sizes="50vw" className={styles.image} />
       </div>
-      <div className={styles.secondaryImagesDiv}>
+{/*      <div className={styles.secondaryImagesDiv}>
         {images.map((img, i) => (
           <div className={styles.secondaryImage} key={img.id} onClick={() => setIndex(i)}>
             <Image src={img.url} alt={img.alt} fill sizes="30vw" className={styles.image} />
           </div>
         ))}
-      </div>
+      </div>*/}
     </div>
   )
 }

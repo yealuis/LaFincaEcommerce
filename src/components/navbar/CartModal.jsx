@@ -10,8 +10,6 @@ const CartModal = () => {
   const handleRemoveItem = (productId) => {
     removeFromCart(productId)
   }
-
-   console.log("Cart items:", cartItems)
   return (
     <div className={styles.cartModal}>
       {!cartItems || cartItems.length === 0 ? (
