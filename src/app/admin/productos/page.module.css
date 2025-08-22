@@ -1,0 +1,129 @@
+.adminContainer {
+  padding: 32px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #222;
+}
+
+.error {
+  color: #b00;
+  background: #ffeaea;
+  padding: 8px 16px;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.addBtn {
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.addBtn:hover {
+  background: #005bb5;
+}
+
+.addForm {
+  background: #f7f7f7;
+  padding: 18px 16px;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+.addForm h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+.formRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 1rem;
+}
+.addForm input[type="text"],
+.addForm input[type="number"],
+.addForm input[type="date"],
+.addForm input[type="file"] {
+  padding: 6px 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  min-width: 120px;
+}
+.addForm label {
+  font-size: 0.98rem;
+  color: #333;
+}
+.saveBtn, .editBtn, .cancelBtn {
+  border: none;
+  padding: 7px 14px;
+  border-radius: 5px;
+  font-size: 1rem;
+  margin-right: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.saveBtn:hover, .editBtn:hover {
+  background: #005bb5;
+}
+.cancelBtn {
+  background: #aaa;
+}
+.cancelBtn:hover {
+  background: #888;
+}
+
+.tableWrapper {
+  overflow-x: auto;
+}
+.productosTable {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.productosTable th, .productosTable td {
+  border: 1px solid #e0e0e0;
+  padding: 8px 10px;
+  text-align: left;
+  font-size: 1rem;
+}
+.productosTable th {
+  background: #f7f7f7;
+  font-weight: 600;
+}
+.productosTable tr:nth-child(even) {
+  background: #fafafa;
+}
+.imgThumb {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid #aaa;
+}
+@media (max-width: 900px) {
+  .formRow {
+    flex-direction: column;
+    gap: 6px;
+  }
+  .productosTable th, .productosTable td {
+    font-size: 0.92rem;
+    padding: 5px 4px;
+  }
+  .imgThumb {
+    width: 32px;
+    height: 32px;
+  }
+}

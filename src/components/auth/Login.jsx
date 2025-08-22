@@ -1,9 +1,9 @@
 'use client'
 import { useState } from "react"
+import { useRouter } from "next/navigation"
 import styles from './auth.module.css'
 import Button from "../UI/Button"
-import { signIn } from "next-auth/react"
-import Link from "next/link"
+import { signIn, useSession } from "next-auth/react"
 
 const MODES = {
   LOGIN: "LOGIN",
@@ -25,17 +25,23 @@ const Login = () => {
   const [docType, setDocType] = useState('V')
   const [docNumber, setDocNumber] = useState('')
   const [docSuffix, setDocSuffix] = useState('')
+  const router = useRouter()
+  const { update } = useSession()
 
    const formTitle =
+    mode === MODES.LOGIN ? "Iniciar Sesión" :
     mode === MODES.REGISTER ? "Registrarse" :
     mode === MODES.RESET_PASSWORD ? "Recupera tu contraseña" :
+    mode === MODES.EMAIL_VERIFICATION ? "Verifica tu Email" :
     "Verifica tu Email"
 
   const buttonTitle =
+    mode === MODES.LOGIN ? "Iniciar Sesión" :
     mode === MODES.REGISTER ? "Registrarse" :
     mode === MODES.RESET_PASSWORD ? "Recuperar" :
+    mode === MODES.EMAIL_VERIFICATION ? "Verificar" :
     "Verificar"
-/*  const handleSubmit = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     setIsLoading(true)
     setError("")
@@ -56,16 +62,14 @@ const Login = () => {
         })
 
         if (result?.error) {
-          if (result.error.includes("Usuario no encontrado")) {
-            setError('Usuario no encontrado')
-          } else if (result.error.includes("Contraseña incorrecta")) {
-            setError('Contraseña incorrecta')
-          } else {
-            setError('Error en la autenticación')
-          }
-        } else {
+          setError(result.error || 'Credenciales inválidas')
+        } else if (result?.ok) {
           setMessage('Inicio de sesión exitoso')
+          // Forzar actualización de la sesión
+          if (typeof update === 'function') await update()
           router.push('/perfil')
+        } else {
+          setError('Error desconocido al iniciar sesión')
         }
       }
       else if (mode === MODES.REGISTER) {
@@ -89,7 +93,7 @@ const Login = () => {
         const data = await result.json()
         if (result.ok) {
           setMessage('Registro exitoso')
-          setMode(MODES.EMAIL_VERIFICATION)
+          setMode(MODES.LOGIN)
         } else {
           setError(data.error || 'Error al registrarse')
         }
@@ -130,44 +134,13 @@ const Login = () => {
     } finally {
       setIsLoading(false)
     }
-  }*/
+  }
 
-
-  return (
+return (
     <div className={styles.loginContainer}>
+      {/* Gradiente Superpuesto */}
       <div className={styles.mask}></div>
-      <form className={styles.loginForm} action={async (formData) => {await signIn("credentials", formData)}}>
-        <h1 className={styles.formTitle} >Iniciar Sesión</h1>
-        <div className={styles.modeDiv}>
-          <label className={styles.modeLabel}>E-mail</label>
-          <input type="email" name="email" className={styles.modeInput} required />
-        </div>
-        <div className={styles.modeDiv}>
-          <label className={styles.modeLabel}>Contraseña</label>
-          <input type="password" name="password" className={styles.modeInput} required minLength={6}/>
-        </div>
-        <div className={styles.modeChange} onClick={() => setMode(MODES.RESET_PASSWORD)}>
-          ¿Olvidaste tu contraseña?
-        </div>
-        <Button variant="primary" type="submit" disabled={isLoading}>
-          {isLoading ? "Cargando..." : "Iniciar Sesión"}
-        </Button>
-        {error && <div className={styles.error}>{error}</div>}
-        {message && <div className={styles.message}>{message}</div>}
-        <Link href={"/auth/register"} className={styles.modeChange}>
-          ¿No tienes una cuenta? <span>Regístrate</span>
-        </Link>
-      </form>
-    </div>
-  )
-
-/*  return (
-    <div className={styles.loginContainer}>
-      {/* Gradiente Superpuesto }
-      <div className={styles.mask}></div>
-      <form className={styles.loginForm} action={async (formData) => {
-        await signIn("credentials", formData)
-      }}>
+      <form className={styles.loginForm} onSubmit={handleSubmit}>
         <h1 className={styles.formTitle} >{formTitle}</h1>
         {mode === MODES.REGISTER ? (
           <div className={styles.modeDiv}>
@@ -185,7 +158,7 @@ const Login = () => {
         {mode !== MODES.EMAIL_VERIFICATION ? (
           <div className={styles.modeDiv}>
             <label className={styles.modeLabel}>E-mail</label>
-            <input type="email" name="email" className={styles.modeInput} required />
+            <input type="email" name="email" className={styles.modeInput} required value={email} onChange={e => setEmail(e.target.value)} />
           </div>
         ) : (
           <div className={styles.modeDiv}>
@@ -196,7 +169,7 @@ const Login = () => {
         {mode === MODES.LOGIN || mode === MODES.REGISTER ? (
           <div className={styles.modeDiv}>
             <label className={styles.modeLabel}>Contraseña</label>
-            <input type="password" name="password" className={styles.modeInput} required minLength={6}/>
+            <input type="password" name="password" className={styles.modeInput} required minLength={6} value={password} onChange={e => setPassword(e.target.value)} />
           </div>
         ) : null}
         {mode === MODES.LOGIN && (
@@ -227,7 +200,7 @@ const Login = () => {
         )}
       </form>
     </div>
-  )*/
+  )
 }
 
 export default Login

@@ -19,13 +19,15 @@
     "@vercel/analytics": "^1.5.0",
     "@vercel/speed-insights": "^1.2.0",
     "bcrypt": "^6.0.0",
+    "bcryptjs": "^3.0.2",
     "next": "15.2.5",
     "next-auth": "^5.0.0-beta.29",
     "pg": "^8.16.0",
     "postgres": "^3.4.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "stripe": "^18.3.0"
+    "stripe": "^18.3.0",
+    "uuid": "^11.1.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

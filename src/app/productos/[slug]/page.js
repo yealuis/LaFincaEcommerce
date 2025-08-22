@@ -18,6 +18,14 @@ const ProductSinglePage = async ({ params }) => {
       {/* Imagen */}
       <div className={styles.productImages}>
         <ProductImages/>
+        <div className={`${styles.productInfo} ${styles.center}`}>
+          <h4 className={styles.secondaryTitle}>Composición</h4>
+          <p className={`${styles.description} `}>
+            {product.composicion?.split('\n').map((paragraph, index) => (
+              <p key={index}>{paragraph.trim()}</p>
+            ))}
+          </p>
+        </div>
       </div>
       {/* Texto */}
       <div className={styles.productText}>
@@ -26,7 +34,6 @@ const ProductSinglePage = async ({ params }) => {
           <div className={styles.productInfo}>
             <h3 className={styles.secondaryTitle}>Precio</h3>
             <p className={styles.description}>{parseFloat(product.precio1ds).toFixed(2)}$</p>
-          {/*<h2 className={styles.discountPrice}>45$</h2>*/}
           </div>
           <div className={styles.productInfo}>
             <h4 className={styles.secondaryTitle}>Cantidad de unidades por caja</h4>
@@ -40,16 +47,20 @@ const ProductSinglePage = async ({ params }) => {
           <p className={styles.description}>{product.marca}</p>
         </div>
         <div className={styles.productInfo}>
-          <h4 className={styles.secondaryTitle}>Composición</h4>
-          <p className={styles.description}>{product.composicion}</p>
-        </div>
-        <div className={styles.productInfo}>
           <h4 className={styles.secondaryTitle}>Indicaciones</h4>
-          <p className={styles.description}>{product.indicaciones}</p>
+          <p className={styles.description}>
+            {product.indicaciones?.split('\n').map((paragraph, index) => (
+              <p key={index}>{paragraph.trim()}</p>
+            ))}
+          </p>
         </div>
         <div className={styles.productInfo}>
           <h4 className={styles.secondaryTitle}>Administración</h4>
-          <p className={styles.description}>{product.administracion}</p>
+          <p className={styles.description}>
+            {product.administracion?.split('\n').map((paragraph, index) => (
+              <p key={index}>{paragraph.trim()}</p>
+            ))}
+          </p>
         </div>
       </div>
     </div>

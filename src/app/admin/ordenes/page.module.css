@@ -1,0 +1,70 @@
+.adminContainer {
+  padding: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #222;
+}
+
+.emptyMsg {
+  color: #888;
+  font-size: 1.1rem;
+  margin-top: 2rem;
+}
+
+.tableWrapper {
+  overflow-x: auto;
+}
+
+.ordenesTable {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.ordenesTable th, .ordenesTable td {
+  border: 1px solid #e0e0e0;
+  padding: 10px 12px;
+  text-align: left;
+  font-size: 1rem;
+}
+
+.ordenesTable th {
+  background: #f7f7f7;
+  font-weight: 600;
+}
+
+.ordenesTable tr:nth-child(even) {
+  background: #fafafa;
+}
+
+.cartPreview {
+  font-size: 0.95rem;
+  background: #f5f5f5;
+  border-radius: 4px;
+  padding: 8px;
+  max-width: 320px;
+  overflow-x: auto;
+}
+
+@media (max-width: 700px) {
+  .adminContainer {
+    padding: 10px;
+  }
+  .ordenesTable th, .ordenesTable td {
+    font-size: 0.9rem;
+    padding: 6px 4px;
+  }
+  .cartPreview {
+    font-size: 0.85rem;
+    max-width: 180px;
+  }
+}

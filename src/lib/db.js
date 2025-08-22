@@ -16,7 +16,7 @@ export async function query(text, params) {
 }
 
 function productFilters(searchTerm, filters) {
-  const conditions = ["s.existen > 0"]
+  const conditions = ["s.existen >= 0"]
     const params = []
     let paramIndex = 1
     

@@ -8,7 +8,10 @@ import CartModal from "./CartModal"
 import { usePathname } from "next/navigation"
 import { useCart } from "../cart/CartContext"
 
+import { useSession, signOut } from "next-auth/react"
+
 const NavIcons = () => {
+  const { data: session } = useSession()
   const [isProfileOpen, setIsProfileOpen] = useState(false)
   const [isCartOpen, setIsCartOpen] = useState(false)
   const pathname = usePathname()
@@ -32,18 +35,21 @@ const NavIcons = () => {
 
   return (
     <div className={styles.navIcons}>
-      <FontAwesomeIcon icon={faUser} className={styles.awesomeIcons} onClick={handleProfile}/>
-      {isProfileOpen && (
-        <div className={styles.profileBar}>
-          <Link href="/perfil">Perfil</Link>
-          <div className={styles.div} >Cerrar Sesión</div>
-        </div>
+      {session && (
+        <>
+          <FontAwesomeIcon icon={faUser} className={styles.awesomeIcons} onClick={handleProfile}/>
+          {isProfileOpen && (
+            <div className={styles.profileBar}>
+              <Link href="/perfil">Perfil</Link>
+              <div className={styles.div} onClick={() => signOut({ callbackUrl: "/" })}>Cerrar Sesión</div>
+            </div>
+          )}
+        </>
       )}
       <div className={styles.cartContainer} onClick={() => setIsCartOpen((prev) => !prev)}>
         <FontAwesomeIcon icon={faCartShopping} className={styles.awesomeIcons} />
         <div className={styles.cartCounter}>
           {cartCount}
-          {/*counter*/}
         </div>
       </div>
       {isCartOpen && <CartModal />}
