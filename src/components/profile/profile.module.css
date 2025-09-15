@@ -219,7 +219,7 @@
 }
 
 .profileDetail svg {
-  color: #5e72e4;
+  color: var(--lafincaGreen);
   width: 16px;
   height: 16px;
 }
@@ -411,7 +411,7 @@
 }
 
 .financialTitle svg {
-  color: #5e72e4;
+  color: var(--lafincaGreen);
 }
 
 .financialTabs {
@@ -432,13 +432,13 @@
 }
 
 .financialTab:hover {
-  color: #5e72e4;
+  color: var(--lafincaGreen);
   background-color: rgba(94, 114, 228, 0.05);
 }
 
 .financialTab.activeTab {
-  color: #5e72e4;
-  border-bottom-color: #5e72e4;
+  color: var(--lafincaGreen);
+  border-bottom-color: var(--lafincaGreen);
 }
 
 /* Resumen Financiero */
@@ -471,7 +471,7 @@
 .summaryIcon {
   width: 50px;
   height: 50px;
-  background-color: #5e72e4;
+  background-color: var(--lafincaGreen);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -549,7 +549,7 @@
 
 .facturaNumber, .pagoNumber {
   font-weight: 600;
-  color: #5e72e4;
+  color: #32325d;
   font-size: 1.125rem;
 }
 
@@ -591,7 +591,7 @@
 }
 
 .facturaDate svg, .facturaAmount svg, .pagoDate svg, .pagoAmount svg {
-  color: #5e72e4;
+  color: var(--lafincaGreen);
   width: 14px;
   height: 14px;
 }
