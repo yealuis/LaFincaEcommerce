@@ -129,9 +129,9 @@ function AdminProductosPageContent() {
                 <input name="unidadesxcaja" placeholder="Unidades x Caja" value={addData.unidadesxcaja} onChange={handleAddChange} />
               </div>
               <div className={styles.formRow}>
-                <label>Imagen 1 <input name="imagen1" type="file" accept="image/*" onChange={handleAddChange} /></label>
+                {/*<label>Imagen 1 <input name="imagen1" type="file" accept="image/*" onChange={handleAddChange} /></label>
                 <label>Imagen 2 <input name="imagen2" type="file" accept="image/*" onChange={handleAddChange} /></label>
-                <label>Imagen 3 <input name="imagen3" type="file" accept="image/*" onChange={handleAddChange} /></label>
+                <label>Imagen 3 <input name="imagen3" type="file" accept="image/*" onChange={handleAddChange} /></label>*/}
               </div>
               <button className={styles.saveBtn} type="submit">Guardar Producto</button>
             </form>
@@ -154,9 +154,9 @@ function AdminProductosPageContent() {
                   <th>Indicaciones</th>
                   <th>Administración</th>
                   <th>Unidades x Caja</th>
-                  <th>Imagen 1</th>
+                  {/*<th>Imagen 1</th>
                   <th>Imagen 2</th>
-                  <th>Imagen 3</th>
+                  <th>Imagen 3</th>*/}
                   <th>Acciones</th>
                 </tr>
               </thead>
@@ -179,9 +179,9 @@ function AdminProductosPageContent() {
                         <td><input name="indicaciones" value={editData.indicaciones} onChange={handleEditChange} /></td>
                         <td><input name="administracion" value={editData.administracion} onChange={handleEditChange} /></td>
                         <td><input name="unidadesxcaja" value={editData.unidadesxcaja} onChange={handleEditChange} /></td>
-                        <td><input name="imagen1" type="file" accept="image/*" onChange={handleEditChange} /></td>
+                        {/*<td><input name="imagen1" type="file" accept="image/*" onChange={handleEditChange} /></td>
                         <td><input name="imagen2" type="file" accept="image/*" onChange={handleEditChange} /></td>
-                        <td><input name="imagen3" type="file" accept="image/*" onChange={handleEditChange} /></td>
+                        <td><input name="imagen3" type="file" accept="image/*" onChange={handleEditChange} /></td>*/}
                         <td>
                           <button className={styles.saveBtn} onClick={handleEditSave}>Guardar</button>
                           <button className={styles.cancelBtn} onClick={() => setEditing(null)}>Cancelar</button>
@@ -203,9 +203,9 @@ function AdminProductosPageContent() {
                         <td>{prod.indicaciones}</td>
                         <td>{prod.administracion}</td>
                         <td>{prod.unidadesxcaja}</td>
-                        <td>{prod.imagen1 && <img src={`data:image/jpeg;base64,${prod.imagen1}`} alt="img1" className={styles.imgThumb} />}</td>
+                        {/*<td>{prod.imagen1 && <img src={`data:image/jpeg;base64,${prod.imagen1}`} alt="img1" className={styles.imgThumb} />}</td>
                         <td>{prod.imagen2 && <img src={`data:image/jpeg;base64,${prod.imagen2}`} alt="img2" className={styles.imgThumb} />}</td>
-                        <td>{prod.imagen3 && <img src={`data:image/jpeg;base64,${prod.imagen3}`} alt="img3" className={styles.imgThumb} />}</td>
+                        <td>{prod.imagen3 && <img src={`data:image/jpeg;base64,${prod.imagen3}`} alt="img3" className={styles.imgThumb} />}</td>*/}
                         <td>
                           <Button variant="primary" className={styles.editBtn} onClick={() => handleEdit(prod.codprod)}>Editar</Button>
                         </td>
