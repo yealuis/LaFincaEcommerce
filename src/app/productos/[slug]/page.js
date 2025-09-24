@@ -1,6 +1,5 @@
 import ProductImages from "@/components/ProductPage/ProductImages"
 import styles from "./page.module.css"
-import Add from "@/components/ProductPage/Add"
 import { getProductInfo } from "@/lib/db"
 import { notFound } from "next/navigation"
 
@@ -31,16 +30,11 @@ const ProductSinglePage = async ({ params }) => {
       <div className={styles.productText}>
         <h1 className={styles.title}>{product.descrip}</h1>
         <div className={styles.priceDiv}>
-          <div className={styles.productInfo}>
-            <h3 className={styles.secondaryTitle}>Precio</h3>
-            <p className={styles.description}>{parseFloat(product.precio1ds).toFixed(2)}$</p>
-          </div>
-          <div className={styles.productInfo}>
+          <div className={`${styles.productInfo} ${styles.center}`}>
             <h4 className={styles.secondaryTitle}>Cantidad de unidades por caja</h4>
             <p className={`${styles.description} ${styles.center}`}>{product.unidadesxcaja}</p>
           </div>
         </div>
-        <Add/>
         <div className={styles.divSeparator}/>
         <div className={styles.productInfo}>
           <h4 className={styles.secondaryTitle}>Laboratorio</h4>

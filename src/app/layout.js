@@ -6,8 +6,6 @@ import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from '@vercel/analytics/next';
-import { CartProvider } from "@/components/cart/CartContext";
-import SessionProvider from "@/components/providers/SessionProvider";
 config.autoAddCss = false;
 
 const geistSans = Geist({
@@ -32,17 +30,13 @@ export default function RootLayout({ children }) {
       suppressHydrationWarning="true"
       data-lt-installed="true">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <SessionProvider>
-          <CartProvider>
-            <header>
-              <Navbar/>
-            </header>
-            {children}
-            <SpeedInsights/>
-            <Analytics/>
-            <Footer/>
-          </CartProvider>
-        </SessionProvider>
+        <header>
+          <Navbar/>
+        </header>
+        {children}
+        <SpeedInsights/>
+        <Analytics/>
+        <Footer/>
       </body>
     </html>
   );

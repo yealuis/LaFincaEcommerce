@@ -55,7 +55,7 @@ const Slider = () => {
           <div className={styles.slideText}>
             <h2 className={styles.textH2}>{slide.description}</h2>
             <h1 className={styles.textH1}>{slide.title}</h1>
-            <Link href={slide.url}><Button variant="edit">Compra ahora</Button></Link>
+            <Link href={slide.url}><Button variant="edit">Ver Más</Button></Link>
           </div>
           {/* Contenedor de la imagen */}
           <div className={styles.slideImage}>

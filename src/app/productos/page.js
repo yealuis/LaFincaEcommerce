@@ -29,7 +29,7 @@ const ProductsPage = () => {
       {/* CAMPAÑA */}
       <div className={styles.campainContainer}>
         <div className={styles.campainImageContainer}>
-          <Image src="/lafincaLogoH.webp" alt="isopan" fill className={styles.campainImage}></Image>
+          <Image src="/lafincaLogoH.webp" alt="la finca" fill className={styles.campainImage}></Image>
         </div>
         <div className={styles.campain}>
           <h1 className={styles.campainH1}> Venta al mayor y detal de insumos, Medicinas Veterianarias y todo lo relacionada con el campo</h1>

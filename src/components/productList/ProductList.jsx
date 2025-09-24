@@ -4,7 +4,6 @@ import Image from "next/image"
 import styles from "./productList.module.css"
 import { useEffect, useState } from "react"
 import { getFilteredProducts } from "@/lib/db"
-import Button from "../UI/Button"
 
 const ProductList = ({ filterType, currentPage, limit, searchTerm, filters }) => {
 
@@ -32,10 +31,7 @@ const ProductList = ({ filterType, currentPage, limit, searchTerm, filters }) =>
           </div>
           <div className={styles.productData}>
             <span className={styles.productName}>{product.descrip}</span>
-            <span className={styles.productPrice}>{parseFloat(product.precio1ds).toFixed(2)}$</span>
           </div>
-          <div className={styles.productDescription}>{product.descrip}</div>
-          <Button variant="primary" className={styles.addToCart}>Agregar al Carrito</Button>
         </Link>
       )}
     </div>

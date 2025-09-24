@@ -41,16 +41,11 @@ const Filter = ({onFilterChange}) => {
             <option value={l.marca} key={l.marca}>{l.marca} </option>
           )}
         </select>
-        <input type="text" name="min" placeholder="minimo" className={styles.filterInput} value={min} onChange={e => { setMin(e.target.value)}} />
-        <input type="text" name="max" placeholder="maximo" className={styles.filterInput} value={max} onChange={e => { setMax(e.target.value)}} />
-
-        <select className={`${styles.filterSelect} ${styles.filterSort}`} value={sort} onChange={e => { setSort(e.target.value)}} >
-          <option>Ordenar Por</option>
-          <option value="asc price">Precio (Menor Precio)</option>
-          <option value="desc price">Price (Mayor Precio)</option>
+        <select className={`${styles.filterSelect}`} value={sort} onChange={e => { setSort(e.target.value)}} >
+          <option>Orden Alfabético</option>
           <option value="asc mostRelevant">Más Relevantes</option>
         </select>
-        <Button variant="primary" onClick={() => handleChange(onFilterChange)}>Cambiar</Button>
+        <Button variant="primary" onClick={() => handleChange(onFilterChange)}>Aplicar</Button>
       </div>
     </div>
   )

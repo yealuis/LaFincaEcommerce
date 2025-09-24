@@ -27,7 +27,7 @@ const Allies = () => {
         <Link  href="https://www.instagram.com/agrofincanova/" target="_blank">
           <div className={styles.partnerCard}>
             <div className={styles.partnerLogo}>
-              <Image src='/fincaNova.webp' alt='Finca Nova' width={200} height={200}/>
+              <Image src='/FINCANOVA.webp' alt='Finca Nova' width={200} height={200}/>
             </div>
             <h3 className={styles.partnerName}>Finca Nova</h3>
           </div>
