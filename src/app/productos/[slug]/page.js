@@ -35,15 +35,30 @@ const ProductSinglePage = async ({ params }) => {
             <p className={`${styles.description} ${styles.center}`}>{product.unidadesxcaja}</p>
           </div>
         </div>
+        <div className={styles.productInfo}>
+          <h3 className={styles.secondaryTitle}>{product.uso}</h3>
+        </div>
         <div className={styles.divSeparator}/>
         <div className={styles.productInfo}>
           <h4 className={styles.secondaryTitle}>Laboratorio</h4>
           <p className={styles.description}>{product.marca}</p>
         </div>
         <div className={styles.productInfo}>
+          <h4 className={styles.secondaryTitle}>Especies de destino</h4>
+          <p className={styles.description}>{product.especies}</p>
+        </div>
+        <div className={styles.productInfo}>
           <h4 className={styles.secondaryTitle}>Indicaciones</h4>
           <p className={styles.description}>
             {product.indicaciones?.split('\n').map((paragraph, index) => (
+              <p key={index}>{paragraph.trim()}</p>
+            ))}
+          </p>
+        </div>
+        <div className={styles.productInfo}>
+          <h4 className={styles.secondaryTitle}>Contraindicaciones</h4>
+          <p className={styles.description}>
+            {product.contraindicaciones?.split('\n').map((paragraph, index) => (
               <p key={index}>{paragraph.trim()}</p>
             ))}
           </p>

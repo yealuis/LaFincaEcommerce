@@ -124,7 +124,7 @@ export async function getTotalProducts(searchTerm = "", filters = {}) {
 
 export async function getProductInfo(codprod) {
   const result = await query(`
-  SELECT s.codprod, s.descrip, s.marca, s.existen, s1.precio1ds, p.composicion, p.indicaciones, p.administracion, p.unidadesxcaja, encode(p.imagen, 'base64') AS imagen1, encode(p.imagen2, 'base64') AS imagen2, encode(p.imagen3, 'base64') AS imagen3
+  SELECT s.codprod, s.descrip, s.marca, s.existen, s1.precio1ds, p.composicion, p.indicaciones, p.administracion, p.unidadesxcaja, encode(p.imagen, 'base64') AS imagen1, encode(p.imagen2, 'base64') AS imagen2, encode(p.imagen3, 'base64') AS imagen3, p.contraindicaciones, p.especies, p.uso
   FROM saprod s
   JOIN saprod_01 s1 ON s.codprod = s1.codprod
   JOIN productosinfo p ON s.codprod = p.codprod
